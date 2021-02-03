@@ -36,7 +36,8 @@ public class UIManager : Singleton<UIManager> {
 
     public void DestroyCharUI(CharUI charUI) {
         charUIs.Remove(charUI);
-        Destroy(charUI.gameObject);
+        charUI.Disable();
+        Destroy(charUI.gameObject,1);
     }
     private void Update() {
         foreach (var charUI in charUIs) {
